@@ -12,23 +12,22 @@ void selection_sort(int *array, size_t size)
 	size_t i, j;
 	int flag = 0;
 
-	if (array && size > 1)
+	if (!array || size <= 1)
+		return;
+	i = 0;
+	while (i < size)
 	{
-		i = 0;
-		while (i < size)
+		for (j = i + 1; j < size; j++)
 		{
-			for (j = i + 1; j < size; j++)
+			if (array[i] > array[j])
 			{
-				if (array[i] > array[j])
-				{
-					swap_array(&array[i], &array[j]);
-					flag = 1;
-				}
+				swap_array(&array[i], &array[j]);
+				flag = 1;
 			}
-			if (flag)
-				print_array(array, size);
-			i++;
 		}
+		if (flag)
+			print_array(array, size);
+		i++;
 	}
 }
 

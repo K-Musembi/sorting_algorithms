@@ -27,6 +27,9 @@ void quick_sort(int *array, size_t size);
 void swap(listint_t **temp, listint_t **nxt);
 void rev_swap(listint_t **nxt, listint_t **back);
 void swap_array(int *one, int *two);
-int partition(int **array, int low, int high);
+int partition(int *array, int high, size_t size);
+void merge(int *array, size_t mid, size_t high);
+void merge_sort(int *array, size_t size);
+void swap_sort(int *one, int *two);
 
 #endif
